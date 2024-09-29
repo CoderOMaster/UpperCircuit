@@ -10,6 +10,9 @@ from flask import Flask, request, jsonify
 import os
 import Verification
 
+
+app = Flask(__name__)
+
 model_path = hf_hub_download(repo_id="arnabdhar/YOLOv8-Face-Detection", filename="model.pt")
 model = YOLO(model_path)
 
@@ -34,7 +37,7 @@ def faceDetc(image_id,model):
         cropped_face = image.crop((x_min, y_min, x_max, y_max))
         
         # Save the cropped face as a new image
-        output_face_path = f"face_1.jpeg"
+        output_face_path = "face_1.jpeg"
         cropped_face.save(output_face_path)
         # print(f"Saved cropped face as {output_face_path}")
 
@@ -42,11 +45,18 @@ def faceDetc(image_id,model):
 result = DeepFace.verify(img1_path="face_1.jpeg",img2_path="verified_image.jpg")
 verified = result.get("verified", False)  # Defaults to False if key not found
 
+UPLOAD_FOLDER = './received_images'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.route('/receive-image', methods=['POST'])
+
 def receive_image():
     if 'image' not in request.files:
         return jsonify({'error': 'No image file in the request'})
 
     image_id = request.files['image']
+    image_path = os.path.join(UPLOAD_FOLDER, image_id.filename)
+    image_id.save(image_path)
     faceDetc(image_id,model)
 
     return result
