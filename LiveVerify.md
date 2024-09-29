@@ -53,7 +53,7 @@ Follow these steps to set up the verification system on your local machine.
 First, clone the repository containing the verification scripts and related files.
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone [https://github.com//prasukjain07/UpperCircuit.git]
 cd your-repo
 ```
 
