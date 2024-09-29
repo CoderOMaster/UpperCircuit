@@ -75,6 +75,11 @@ The KYC (Know Your Customer) Verification Platform is designed to ensure user au
 
 ## ⚙️ Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/prasukjain07/UpperCircuit.git
+## 1. Clone the repository:
+      git clone https://github.com/prasukjain07/UpperCircuit.git
+
+## 2.Drive Link for the implementation 
+https://drive.google.com/drive/u/3/folders/1QG6jH0X_9YUdGkwahCwjluvTf5QXUD6K
+
+## 3. PPT
+https://www.canva.com/design/DAGSFs0WMWU/aremOTevgcW-nNyALIozgA/edit?utm_content=DAGSFs0WMWU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
