@@ -1,3 +1,5 @@
+#for liveness detection
+
 import cv2
 import random
 import string
@@ -215,7 +217,7 @@ def main():
             if verification_result is False:
                 print("CAPTCHA and blink verification failed.")
                 break
-
+        
     cap.release()
     cv2.destroyAllWindows()
 
